@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { VITE_API_URL } from '$env/static/private';
 
-/** @type {import('./$types').PageLoad} */
 export async function load() {
-    let backendHost = 'http://localhost:1337';
     try {
-        const res = await axios.get(backendHost + '/api/general', {
+        const res = await axios.get(VITE_API_URL + '/general', {
             params: { populate: '*'},
         });
         const cmsData = res.data.data.attributes;   
