@@ -16,7 +16,7 @@
                 <div class="main-menu__wrapper-inner">
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="index.html"><img src={defaultLogo} alt="Zelma"></a>
+                            <a href="/"><img src={defaultLogo} alt="Zelma"></a>
                         </div>
                     </div>
                     <div class="main-menu__right">

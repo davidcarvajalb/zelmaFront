@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { VITE_API_URL } from '$env/static/private';
+import { PUBLIC_API_URL } from '$env/static/public';
 
 export async function load() {
     try {
-        const res = await axios.get(VITE_API_URL + '/general', {
+        const res = await axios.get(PUBLIC_API_URL + '/general', {
             params: { populate: '*'},
         });
         const cmsData = res.data.data.attributes;   

@@ -154,7 +154,7 @@
         text-align: center;
         min-height: 60vh;
         background-size: cover;
-        background-position: left center;
+        background-position: left top;
         box-shadow:inset 0 0 0 150vw rgba(2, 57, 15, 0.5);
     }
     .main-slider-slide-content {
