@@ -24,7 +24,7 @@
                             <div class="main-menu__right-top-left">
                                 <div class="main-menu__volunteers">
                                     <div class="main-menu__volunteers-text-box">
-                                        <p class="main-menu__volunteers-text">{cms.topCallToAction}</p>
+                                        <p class="main-menu__volunteers-text">{@html cms.topCallToAction}</p>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="main-menu__right-bottom">
                             <div class="main-menu__main-menu-box">
-                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <a href="/" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
                                     {#each cms.mainMenu as mainMenu}
                                         <li>
@@ -82,10 +82,10 @@
                     <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="footer-widget__column footer-widget__about">
                             <div class="footer-widget__about-logo">
-                                <a href="index.html"><img src={footerLogo} alt=""></a>
+                                <a href="/"><img src={footerLogo} alt=""></a>
                             </div>
                             <div class="footer-widget__about-text-box">
-                                <p class="footer-widget__about-text">{cms.FooterDescription}</p></div>
+                                <p class="footer-widget__about-text">{@html cms.footerDescription}</p></div>
                             <div class="footer-widget__btn">
                                 <a href="{cms.footerButton.Link}">{cms.footerButton.Text}</a>
                             </div>
@@ -128,7 +128,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="site-footer__bottom-inner">
-                            <p class="site-footer__bottom-text">{cms.copyRight}</p>
+                            <p class="site-footer__bottom-text">{@html cms.copyRight}</p>
                         </div>
                     </div>
                 </div>

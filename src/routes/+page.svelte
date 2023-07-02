@@ -1,46 +1,33 @@
 <script>
-    import { PUBLIC_BACKEND_URL } from '$env/static/public';
-    import mailSliderShape1 from '$lib/assets/main-slider-two-shape-1.png';
-    import mailSliderShape2 from '$lib/assets/main-slider-two-shape-2.png';
+    import {PUBLIC_BACKEND_URL} from '$env/static/public';
     import helpShape1 from '$lib/assets/help-shape-1.png';
+
+    import { register } from 'swiper/element/bundle';
 
     /** @type {import('./$types').LayoutData} */
     export let data;
     // @ts-ignore
     let cms = data.cmsData;
+
+    register();
 </script>
 
 <!--Main Slider Start-->
-<section class="main-slider-two clearfix" id="home">
-    <div class="swiper-container thm-swiper__slider">
-        <div class="swiper-wrapper">
-            {#each cms.Banner as banner}
-                <div class="swiper-slide">
-                    <div class="image-layer-two" style="background-image: url({PUBLIC_BACKEND_URL + banner.image.data.attributes.url});"></div>
-
-                    <div class="main-slider-two-shape-1">
-                        <img src={mailSliderShape1} alt="">
-                    </div>
-                    <div class="main-slider-two-shape-2">
-                        <img src={mailSliderShape2} alt="">
-                    </div>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="main-slider-two__content">
-                                    <h2 class="main-slider-two__title">{banner.text}</h2>
-                                    <div class="main-slider-two__btn-box">
-                                        <a href={banner.link.Link} class="thm-btn main-slider-two__btn">{banner.link.Text}</a>
-                                    </div>
-                                </div>
-                            </div>
+<section class="main-slider-wrapper" id="home">
+    <swiper-container slides-per-view="1" speed="500" loop="true" css-mode="true">
+        {#each cms.Banner as banner}
+            <swiper-slide class="main-slider-slide">
+                <div class="main-slider-slide-wrapper" style="background-image: url({PUBLIC_BACKEND_URL + banner.image.data.attributes.url});">
+                    <div class="main-slider-slide-content">
+                        <h2>{banner.text}</h2>
+                        <div class="main-slider-slide-btn">
+                            <a href={banner.link.Link} class="thm-btn main-slider-two__btn">{banner.link.Text}</a>
                         </div>
                     </div>
                 </div>
-            {/each}
-        </div>
-    </div>
+            </swiper-slide>
+        {/each}
+    </swiper-container>
 </section>
 <!--Main Slider End-->
 
@@ -68,7 +55,7 @@
                         <span class="section-title__tagline">{cms.section1.Title}</span>
                         <h2 class="section-title__title">{cms.section1.SubTitle}</h2>
                     </div>
-                    <p class="about-one__text">{cms.section1.Description}</p>
+                    <p class="about-one__text">{@html cms.section1.description}</p>
                     <ul class="list-unstyled about-one__points">
                         <li>
                             <div class="text">
@@ -155,3 +142,36 @@
 </section>
 <!--Help End-->
 {/if}
+
+<style>
+    .main-slider-wrapper {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        overflow-y: hidden;
+    }
+    .main-slider-slide-wrapper {
+        text-align: center;
+        min-height: 60vh;
+        background-size: cover;
+        background-position: left center;
+        box-shadow:inset 0 0 0 150vw rgba(2, 57, 15, 0.5);
+    }
+    .main-slider-slide-content {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .main-slider-wrapper h2 {
+        font-size: 90px;
+        color: #FFF;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -0.04em;
+    }
+    .main-slider-slide-btn {
+        margin-top: 40px;
+    }
+</style>
