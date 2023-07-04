@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { PUBLIC_API_URL } from '$env/static/public';
 
 export async function load() {
+    const PUBLIC_API_URL = "https://strapi-d0zp.onrender.com/api";
     try {
         const res = await axios.get(PUBLIC_API_URL + '/general', {
             params: { populate: '*'},

@@ -1,5 +1,4 @@
 <script>
-    import {PUBLIC_BACKEND_URL} from '$env/static/public';
     import helpShape1 from '$lib/assets/help-shape-1.png';
 
     import { register } from 'swiper/element/bundle';
@@ -8,7 +7,7 @@
     export let data;
     // @ts-ignore
     let cms = data.cmsData;
-
+    const PUBLIC_BACKEND_URL = "https://strapi-d0zp.onrender.com";
     register();
 </script>
 
