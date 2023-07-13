@@ -59,13 +59,13 @@
                         <li>
                             <div class="text">
                                 <h5><a href={cms.section1.FirstLink.Link}>{cms.section1.FirstLink.Text}</a></h5>
-                                <p>{cms.section1.FirstLinkDescription}</p>
+                                <p>{@html cms.section1.FirstLinkDescription}</p>
                             </div>
                         </li>
                         <li>
                             <div class="text">
                                 <h5><a href={cms.section1.SecondLink.Link}>{cms.section1.SecondLink.Text}</a></h5>
-                                <p>{cms.section1.SecondLinkDescription}</p>
+                                <p>{@html cms.section1.SecondLinkDescription}</p>
                             </div>
                         </li>
                     </ul>
