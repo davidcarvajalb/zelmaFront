@@ -118,7 +118,7 @@
                     <div class="help__single-inner">
                         <div class="help__content">
                             <h4 class="help__title"><a href={cms.SectionThree.firstColTitle.Link}>{cms.SectionThree.firstColTitle.Text}</a></h4>
-                            <p class="help__text">{cms.SectionThree.FirstColDescription}</p>
+                            <p class="help__text">{@html cms.SectionThree.FirstColDescription}</p>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                     <div class="help__single-inner">
                         <div class="help__content">
                             <h4 class="help__title"><a href={cms.SectionThree.secondColTitle.Link}>{cms.SectionThree.secondColTitle.Text}</a></h4>
-                            <p class="help__text">{cms.SectionThree.SecondColDescription}</p>
+                            <p class="help__text">{@html cms.SectionThree.SecondColDescription}</p>
                         </div>
                     </div>
                 </div>
