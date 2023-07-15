@@ -11164,3 +11164,6 @@ body.boxed-wrapper {
 .boxed-wrapper .main-menu__volunteers {
   display: none;
 }
+.about-one__points li .text h5 {
+  color: rgb(83, 175, 190);
+}

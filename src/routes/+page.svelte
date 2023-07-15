@@ -7,7 +7,8 @@
     export let data;
     // @ts-ignore
     let cms = data.cmsData;
-    const PUBLIC_BACKEND_URL = "https://strapi-d0zp.onrender.com";
+    //const PUBLIC_BACKEND_URL = "https://strapi-d0zp.onrender.com";
+    const PUBLIC_BACKEND_URL = "http://localhost:1337";
     register();
 </script>
 
@@ -58,13 +59,21 @@
                     <ul class="list-unstyled about-one__points">
                         <li>
                             <div class="text">
-                                <h5><a href={cms.section1.FirstLink.Link}>{cms.section1.FirstLink.Text}</a></h5>
+                                {#if cms.section1.FirstLink.Link}
+                                    <h5><a href={cms.section1.FirstLink.Link}>{cms.section1.FirstLink.Text}</a></h5>
+                                {:else}
+                                    <h5>{cms.section1.FirstLink.Text}</h5>
+                                {/if}
                                 <p>{@html cms.section1.FirstLinkDescription}</p>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <h5><a href={cms.section1.SecondLink.Link}>{cms.section1.SecondLink.Text}</a></h5>
+                                {#if cms.section1.SecondLink.Link}
+                                    <h5><a href={cms.section1.SecondLink.Link}>{cms.section1.SecondLink.Text}</a></h5>
+                                {:else}
+                                    <h5>{cms.section1.SecondLink.Text}</h5>
+                                {/if}
                                 <p>{@html cms.section1.SecondLinkDescription}</p>
                             </div>
                         </li>

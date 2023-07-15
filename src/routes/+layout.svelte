@@ -28,6 +28,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {#if cms.siteMail && cms.topMailText}
                             <div class="main-menu__right-top-right">
                                 <div class="main-menu__right-top-address">
                                     <ul class="list-unstyled main-menu__right-top-address-list">
@@ -43,6 +44,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            {/if}
                         </div>
                         <div class="main-menu__right-bottom">
                             <div class="main-menu__main-menu-box">
